@@ -1,0 +1,22 @@
+package insertion.sort
+
+class InsertionSort(
+    private val arr: IntArray,
+    private val n: Byte
+) {
+    fun sorting(): IntArray {
+        for (i in 1 until n) {
+            val key = arr[i]
+            var j = i - 1
+
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j]
+                j--
+            }
+
+            arr[j + 1] = key
+        }
+
+        return arr
+    }
+}
