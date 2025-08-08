@@ -28,12 +28,8 @@ class MergeSort(
         var indexK = localP
 
         while (indexI < nL && indexJ < nR ) {
-            if (arrayL[indexI] <= arrayR[indexJ]) {
-                arrayA[indexK] = arrayL[indexI]
-                indexI++
-            } else {
-                arrayA[indexK] = arrayR[indexJ++]
-            }
+            if (arrayL[indexI] <= arrayR[indexJ]) arrayA[indexK] = arrayL[indexI++]
+            else arrayA[indexK] = arrayR[indexJ++]
 
             indexK++
         }
