@@ -7,8 +7,8 @@ class MergeSortTest {
     @Test
     fun `Sorting an array with mergesort`() {
         // Arrange (Organizar)
-        val tempArray = intArrayOf(2, 4, 6, 7, 1, 2, 3, 5)
-        val expectedArray = intArrayOf(1, 2, 2, 3, 4, 5, 6, 7)
+        val tempArray = intArrayOf(12, 3, 7, 9, 14, 6, 11, 2)
+        val expectedArray = intArrayOf(2, 3, 6, 7, 9, 11, 12, 14)
 
         // Act (Agir)
         val lengthArray = (tempArray.size) - 1
@@ -16,8 +16,6 @@ class MergeSortTest {
 
         val merge = MergeSort(tempArray, firstIndex, lengthArray)
         merge.sort()
-
-        tempArray.forEach { i -> print("$i ") }
 
         // Assert (Verificar)
         assertArrayEquals(expectedArray, tempArray)
