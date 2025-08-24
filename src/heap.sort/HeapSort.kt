@@ -15,10 +15,9 @@ class HeapSort() {
      * @param index O índice do nó raiz da subárvore que pode violar o max-heap.
      * @param heapSize O tamanho atual do heap dentro do array.
      */
-    private fun maxHeapify(arr: IntArray, index: Int) {
+    private fun maxHeapify(arr: IntArray, index: Int, heapSize: Int) {
         val left = left(index)
         val right = right(index)
-        val heapSize = arr.count()
         var largest = if (left < heapSize && arr[left] > arr[index]) left else index
 
         if (right < heapSize && arr[right] > arr[largest]) largest = right
@@ -28,7 +27,7 @@ class HeapSort() {
             arr[index] = arr[largest]
             arr[largest] = temp
 
-            maxHeapify(arr, largest)
+            maxHeapify(arr, largest, heapSize)
         }
     }
 
