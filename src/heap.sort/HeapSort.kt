@@ -30,6 +30,7 @@ class HeapSort() {
             largest = rightChildIndex
         }
 
+        // Se um dos filhos foi encontrado como maior, precisamos corrigir
         if (largest != index) {
             val temp = arr[index]
             arr[index] = arr[largest]
