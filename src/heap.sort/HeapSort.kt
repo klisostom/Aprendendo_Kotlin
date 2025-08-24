@@ -36,6 +36,7 @@ class HeapSort() {
             arr[index] = arr[largest]
             arr[largest] = temp
 
+            // Recursivamente corrige o heap afetado
             maxHeapify(arr, largest, heapSize)
         }
     }
