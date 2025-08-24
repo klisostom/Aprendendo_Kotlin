@@ -7,7 +7,7 @@ class HeapSort() {
     /**
      * Mantém a propriedade do Max-Heap para um nó e seus descendentes.
      *
-     * Assume que as árvores binárias com raízes em left(index) e right(index)
+     * Assume que as árvores binárias com raízes em leftChildIndex(index) e right(index)
      * são max-heaps, mas o elemento em index pode ser menor que seus filhos,
      * violando a propriedade do max-heap.
      *
@@ -16,9 +16,9 @@ class HeapSort() {
      * @param heapSize O tamanho atual do heap dentro do array.
      */
     private fun maxHeapify(arr: IntArray, index: Int, heapSize: Int) {
-        val left = left(index)
+        val leftChildIndex = left(index)
         val right = right(index)
-        var largest = if (left < heapSize && arr[left] > arr[index]) left else index
+        var largest = if (leftChildIndex < heapSize && arr[leftChildIndex] > arr[index]) leftChildIndex else index
 
         if (right < heapSize && arr[right] > arr[largest]) largest = right
 
