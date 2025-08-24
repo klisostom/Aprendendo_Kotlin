@@ -25,7 +25,10 @@ class HeapSort() {
             largest = leftChildIndex
         }
 
-        if (rightChildIndex < heapSize && arr[rightChildIndex] > arr[largest]) largest = rightChildIndex
+        // Verifica se o filho direito existe (dentro do heapSize) e é maior que o maior até agora
+        if (rightChildIndex < heapSize && arr[rightChildIndex] > arr[largest]) {
+            largest = rightChildIndex
+        }
 
         if (largest != index) {
             val temp = arr[index]
