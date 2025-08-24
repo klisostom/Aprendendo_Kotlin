@@ -20,9 +20,11 @@ class HeapSort() {
         val rightChildIndex = right(index) // Assume right(i) = 2 * i + 2
         var largest = index // Inicialmente, assumimos que o pai é o maior
 
+        // Verifica se o filho esquerdo existe (dentro do heapSize) e é maior que o pai
         if (leftChildIndex < heapSize && arr[leftChildIndex] > arr[index])  {
             largest = leftChildIndex
         }
+
         if (rightChildIndex < heapSize && arr[rightChildIndex] > arr[largest]) largest = rightChildIndex
 
         if (largest != index) {
