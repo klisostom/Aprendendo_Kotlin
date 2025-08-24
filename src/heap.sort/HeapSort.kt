@@ -17,10 +17,10 @@ class HeapSort() {
      */
     private fun maxHeapify(arr: IntArray, index: Int, heapSize: Int) {
         val leftChildIndex = left(index)
-        val right = right(index)
+        val rightChildIndex = right(index)
         var largest = if (leftChildIndex < heapSize && arr[leftChildIndex] > arr[index]) leftChildIndex else index
 
-        if (right < heapSize && arr[right] > arr[largest]) largest = right
+        if (rightChildIndex < heapSize && arr[rightChildIndex] > arr[largest]) largest = rightChildIndex
 
         if (largest != index) {
             val temp = arr[index]
