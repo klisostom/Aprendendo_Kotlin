@@ -16,8 +16,8 @@ class HeapSort() {
      * @param heapSize O tamanho atual do heap dentro do array.
      */
     private fun maxHeapify(arr: IntArray, index: Int, heapSize: Int) {
-        val leftChildIndex = left(index)
-        val rightChildIndex = right(index)
+        val leftChildIndex = left(index) // Assume left(i) = 2 * i + 1
+        val rightChildIndex = right(index) // Assume right(i) = 2 * i + 2
         var largest = if (leftChildIndex < heapSize && arr[leftChildIndex] > arr[index]) leftChildIndex else index
 
         if (rightChildIndex < heapSize && arr[rightChildIndex] > arr[largest]) largest = rightChildIndex
