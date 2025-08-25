@@ -5,6 +5,23 @@ class HeapSort() {
     fun sort(arr: IntArray) {}
 
     /**
+     * Constrói um Max-Heap a partir de um array.
+     *
+     * @param arr O array que representa o heap. (Equivalente a 'A' no Cormen)
+     * @param n O número de elementos no heap. (Equivalente a 'heap-size' sendo definido como 'n')
+     *          Assume-se que os elementos estão nos índices 0 até n-1.
+     */
+    private fun buildMaxHeap(arr: IntArray, n: Int) {
+        // Laço convertido da indexação base-1 do Cormen (⌊n/2⌋ downto 1)
+        // para indexação base-0 em Kotlin (⌊n/2⌋ - 1 downto 0).
+        for (i in (n / 2 - 1) downTo 0) {
+            // Chama maxHeapify, passando 'n' como o tamanho do heap,
+            // conforme a linha 1 do pseudocódigo do Cormen define heap-size = n.
+            maxHeapify(arr, i, n)
+        }
+    }
+
+    /**
      * Mantém a propriedade do Max-Heap para um nó e seus descendentes.
      *
      * Assume que as árvores binárias com raízes em leftChildIndex(index) e right(index)
