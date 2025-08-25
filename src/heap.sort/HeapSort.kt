@@ -2,7 +2,27 @@ package heap.sort
 
 class HeapSort() {
 
-    fun sort(arr: IntArray) {}
+    /**
+     * Ordena um array usando o algoritmo HeapSort.
+     * Tradução do pseudocódigo HEAPSORT do Cormen (4th ed), adaptada para indexação base-0.
+     *
+     * @param arr O array a ser ordenado. Elementos devem estar nos índices 0 até n-1.
+     * @param n O número de elementos no array a serem ordenados.
+     */
+    fun sort(arr: IntArray, n: Int) {
+        buildMaxHeap(arr, n)
+        var heapSize = n
+
+        for (i in (n - 1) downTo 1) {
+            val temp = arr[0]
+            arr[0] = arr[i]
+            arr[i] = temp
+
+            heapSize--
+
+            maxHeapify(arr, 0, heapSize)
+        }
+    }
 
     /**
      * Constrói um Max-Heap a partir de um array.
